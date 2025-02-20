@@ -48,7 +48,7 @@ class MovieFragment : Fragment(), OnListFragmentInteractionListener {
         // Create and set up an AsyncHTTPClient()
         val client = AsyncHttpClient()
         val params = RequestParams()
-        params["api_key"] = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
+        params["api_key"] = API_KEY
 
         client[
             "https://api.themoviedb.org/3/movie/now_playing",
@@ -63,7 +63,7 @@ class MovieFragment : Fragment(), OnListFragmentInteractionListener {
                     // The wait for a response is over
                     progressBar.hide()
 
-                    //TODO - Parse JSON into Models
+                    //Parse JSON into Models
                     val moviesRawJSON: String = json.jsonObject.get("results").toString()
                     val gson = Gson()
                     val arrayMovieType = object : TypeToken<List<Movie>>() {}.type

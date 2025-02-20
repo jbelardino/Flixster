@@ -17,7 +17,6 @@ class Movie {
     @SerializedName("overview")
     var overview: String? = null
 
-    //TODO bookImageUrl
     @SerializedName("poster_path")
     var posterPath: String? = null
 }
